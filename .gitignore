@@ -49,3 +49,4 @@
 .directory
 .vagrant
 .idea
+.env
