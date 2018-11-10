@@ -9,7 +9,9 @@
         "symfony/console": "*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
-        "symfony/yaml": "*"
+        "symfony/twig-bundle": "*",
+        "symfony/yaml": "*",
+        "twig/twig": "^2.0"
     },
     "require-dev": {
         "symfony/dotenv": "*",
