@@ -10,6 +10,7 @@
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
         "symfony/twig-bundle": "*",
+        "symfony/webpack-encore-bundle": "^1.0",
         "symfony/yaml": "*",
         "twig/twig": "^2.0"
     },
