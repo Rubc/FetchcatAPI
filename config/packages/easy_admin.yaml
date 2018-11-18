@@ -1,0 +1,13 @@
+easy_admin:
+    entities:
+        Board:
+            class: App\Entity\Board
+            label: 'Meeting board'
+            form:
+                fields:
+                    - 'mac'
+                    - { property: 'place', type: 'text', label: 'Place' }
+                    - { property: 'lastSeen', type: 'datetime', label: 'Last seen on' }
+                    - { property: 'sync', type: 'checkbox' , label: 'Sync device?' }
+        user:
+            class: App\Entity\User
