@@ -1,6 +1,13 @@
 easy_admin:
     entities:
-#        # List the entity class name you want to manage
-        - App\Entity\User
-#        - App\Entity\Category
-#        - App\Entity\User
+        Board:
+            class: App\Entity\Board
+            label: 'Meeting board'
+            form:
+                fields:
+                    - 'mac'
+                    - { property: 'place', type: 'text', label: 'Place' }
+                    - { property: 'lastSeen', type: 'datetime', label: 'Last seen on' }
+                    - { property: 'sync', type: 'checkbox' , label: 'Sync device?' }
+        user:
+            class: App\Entity\User
