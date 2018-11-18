@@ -2,7 +2,7 @@
     <div class="login-wrapper border border-light w-50 p-3">
         <form class="form-signin" @submit.prevent="login">
             <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
+            <label for="username">{{ 'security.login.username'|trans }}</label>
             <input v-model="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
             <input v-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
