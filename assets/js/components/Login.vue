@@ -1,5 +1,5 @@
 <template>
-    <div class="login-wrapper border border-light">
+    <div class="login-wrapper border border-light w-50 p-3">
         <form class="form-signin" @submit.prevent="login">
             <h2 class="form-signin-heading">Please sign in</h2>
             <label for="inputEmail" class="sr-only">Email address</label>
