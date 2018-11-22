@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,24 @@ class Board
      * @ORM\Column(type="boolean")
      */
     private $Sync;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Calendar", mappedBy="board")
+     */
+    private $calendars;
+
+    public function __construct()
+    {
+        $this->calendars = new ArrayCollection();
+    }
+
+    /**
+     * @return Collection|Calendar[]
+     */
+    public function getProducts(): Collection
+    {
+        return $this->calendars;
+    }
 
 
     public function getPlace(): ?string
@@ -83,5 +103,27 @@ class Board
     public function setMac($mac): void
     {
         $this->mac = $mac;
+    }
+
+    public function addCalendar(Calendar $calendar): Board
+    {
+        $this->calendars->add($calendar);
+
+        return $this;
+    }
+
+    public function removeCalendar(Calendar $calendar)
+    {
+        $this->calendars->remove($calendar);
+        return $this;
+    }
+
+    public function getCalendars()
+    {
+        return $this->calendars;
+    }
+    public function __toString()
+    {
+        return $this->getMac();
     }
 }
