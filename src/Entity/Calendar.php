@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,6 +31,17 @@ class Calendar
      * @ORM\ManyToOne(targetEntity="App\Entity\Board", inversedBy="calendars")
      */
     private $board;
+
+    /**
+     * One product has many features. This is the inverse side.
+     * @ORM\OneToMany(targetEntity="App\Entity\Event", mappedBy="calendar")
+     */
+    private $events;
+
+    public function __construct()
+    {
+        $this->events = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -77,6 +89,22 @@ class Calendar
         $this->board = $board;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    /**
+     * @param mixed $events
+     */
+    public function setEvents($events): void
+    {
+        $this->events = $events;
     }
     public function __toString()
     {
