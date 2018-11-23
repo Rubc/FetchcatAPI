@@ -17,6 +17,7 @@ easy_admin:
                     - { property: 'name', type: 'text', label: 'Name'}
                     - { property: 'Manager', label: 'Calendar type', type: choice, type_options: {choices: {'Google calendar':'GoogleCalendarManager', 'Outlook':'OutlookManager'}}}
                     - board
-
+        Event:
+            class: App\Entity\Event
         User:
             class: App\Entity\User
