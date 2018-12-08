@@ -14,7 +14,7 @@ class Board
     /**
      * @var string
      *
-     * @ORM\Column(name="id", type="string")
+     * @ORM\Column(name="id", type="string", length=190)
      * @ORM\Id
      */
     private $mac;
