@@ -1,4 +1,5 @@
 easy_admin:
+    site_name: Fetchcat
     entities:
         Board:
             class: App\Entity\Board
